@@ -3,170 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vexilla PromptMask | Secure Your Vision</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <meta name="description" content="PromptMask: The Digital Scribe for AI Directors, Character Architects, and Cinematic Prop Masters. Built by SKRS-AI.">
+    <title>PROMPTMASK | The Architect's Shield</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@200;400;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --onyx: #0A0A0A;
+            --onyx: #050505;
             --vexilla-green: #00FF41;
-            --ghost-silver: #C0C0C0;
-            --dark-gray: #1A1A1A;
-            --glow: 0 0 15px rgba(0, 255, 65, 0.5);
+            --ominous-green: rgba(0, 255, 65, 0.9);
+            --deep-shield: #0a0f0a;
+            --glass: rgba(255, 255, 255, 0.03);
+            --glow-shadow: 0 0 50px rgba(0, 255, 65, 0.3);
         }
 
+        /* Prevent horizontal scroll on mobile */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--onyx);
-            color: var(--ghost-silver);
-            font-family: 'Roboto Mono', monospace;
-            line-height: 1.6;
-            overflow-x: hidden;
+        
+        html, body { 
+            overflow-x: hidden; 
+            background-color: var(--onyx); 
+            color: #d1d1d1;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.8;
+            cursor: crosshair; /* Cinematic feel */
         }
 
-        h1, h2, h3, .logo { font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background: rgba(10, 10, 10, 0.95);
-            border-bottom: 1px solid var(--dark-gray);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        /* --- LOGO HOVER ENHANCEMENT (THE OMINOUS GLOW) --- */
+        .logo-container {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 40px;
+            display: inline-block;
         }
 
-        .logo { color: white; font-size: 1.2rem; }
-        .logo span { color: var(--vexilla-green); }
+        .main-logo-img {
+            max-width: 280px;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 65, 0.2));
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
 
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 30px; }
-        nav ul li a { color: var(--ghost-silver); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        nav ul li a:hover { color: var(--vexilla-green); text-shadow: var(--glow); }
+        /* The Activation State */
+        .logo-container:hover .main-logo-img {
+            filter: drop-shadow(0 0 45px var(--ominous-green)) brightness(1.3);
+            transform: scale(1.08) translateY(-5px);
+        }
 
-        /* Hero Section */
+        /* Ambient Background Glow on Hover */
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 150%; height: 150%;
+            background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+
+        .logo-container:hover::before { opacity: 1; }
+
+        /* --- HERO SECTION --- */
         .hero {
-            height: 90vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: radial-gradient(circle at center, #111 0%, #0A0A0A 100%);
-            padding: 20px;
-        }
-
-        .p-shield {
-            width: 180px;
-            margin-bottom: 30px;
-            filter: drop-shadow(var(--glow));
-        }
-
-        .hero h1 { font-size: 3rem; color: white; margin-bottom: 10px; }
-        .hero h1 span { color: var(--vexilla-green); }
-        .slogan { font-size: 1.2rem; color: var(--vexilla-green); margin-bottom: 40px; font-style: italic; }
-
-        .cta-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
-
-        .btn {
-            padding: 15px 35px;
-            border: 2px solid var(--vexilla-green);
-            background: transparent;
-            color: var(--vexilla-green);
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.4s;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .btn:hover {
-            background: var(--vexilla-green);
-            color: var(--onyx);
-            box-shadow: var(--glow);
-        }
-
-        /* Features Section */
-        .features {
             padding: 80px 10%;
+            background: radial-gradient(circle at center, #0f0f0f 0%, #050505 100%);
+        }
+
+        .event-tag {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--vexilla-green);
+            letter-spacing: 8px;
+            font-size: 0.7rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 12vw, 6rem);
+            color: white;
+            line-height: 1;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .main-title span { 
+            color: var(--vexilla-green); 
+            text-shadow: 0 0 30px rgba(0,255,65,0.4); 
+        }
+
+        .slogan-box {
+            margin: 40px auto;
+            border-left: 2px solid var(--vexilla-green);
+            padding-left: 30px;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .slogan { 
+            font-size: clamp(1rem, 3vw, 1.5rem); 
+            color: var(--vexilla-green); 
+            font-weight: 200; 
+            font-style: italic; 
+        }
+
+        /* --- DIRECTORS SUITE (CAPABILITIES) --- */
+        .directors-suite {
+            padding: 120px 10%;
+            background: var(--deep-shield);
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .section-label { 
+            font-family: 'Orbitron', sans-serif; 
+            color: #444; 
+            margin-bottom: 50px; 
+            text-align: center;
+            letter-spacing: 4px;
+        }
+
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
         }
 
         .feature-card {
-            background: var(--dark-gray);
-            padding: 30px;
-            border-radius: 10px;
-            border-bottom: 4px solid var(--vexilla-green);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover { transform: translateY(-10px); }
-        .feature-card h3 { color: white; margin-bottom: 15px; }
-
-        /* Footer */
-        footer {
+            background: var(--glass);
+            border: 1px solid rgba(0, 255, 65, 0.08);
             padding: 50px;
-            text-align: center;
-            border-top: 1px solid var(--dark-gray);
-            font-size: 0.8rem;
+            border-radius: 4px;
+            transition: all 0.4s ease;
         }
 
-        .parent-brand { margin-top: 20px; color: #444; }
+        .feature-card:hover {
+            border-color: var(--vexilla-green);
+            background: rgba(0, 255, 65, 0.03);
+            transform: translateY(-10px);
+        }
 
+        .feature-card h3 { 
+            font-family: 'Orbitron', sans-serif; 
+            color: white; 
+            margin-bottom: 25px; 
+            font-size: 1.2rem; 
+            letter-spacing: 1px;
+        }
+
+        /* --- THE NEED (FILMMAKING & PROPS) --- */
+        .the-need {
+            padding: 120px 10%;
+            background: black;
+            border-top: 1px solid #111;
+        }
+
+        .split { display: flex; gap: 80px; align-items: center; flex-wrap: wrap; }
+        .side-content { flex: 1; min-width: 320px; }
+
+        .highlight-text {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 35px;
+        }
+
+        .prop-list { list-style: none; margin-top: 40px; }
+        .prop-list li {
+            padding: 18px 0;
+            border-bottom: 1px solid #1a1a1a;
+            color: var(--vexilla-green);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- BUTTON ENHANCEMENT --- */
+        .cta-btn {
+            background: var(--vexilla-green);
+            color: black;
+            padding: 24px 65px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            text-decoration: none;
+            letter-spacing: 4px;
+            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            display: inline-block;
+            margin-top: 50px;
+            border-radius: 2px;
+        }
+
+        .cta-btn:hover { 
+            box-shadow: 0 0 50px var(--vexilla-green); 
+            transform: scale(1.05);
+            letter-spacing: 6px;
+        }
+
+        footer {
+            padding: 80px 10%;
+            text-align: center;
+            background: #000;
+            border-top: 1px solid #111;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            color: #444;
+        }
+
+        /* Responsive Fixes */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero { padding: 80px 5%; }
+            .split { gap: 40px; }
+            .feature-card { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">VEXILLA <span>AITS</span></div>
-        <ul>
-            <li><a href="../index.html">VexillaAITS.com</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#support">Support</a></li>
-        </ul>
-    </nav>
+    <main>
+        <section class="hero">
+            <div class="logo-container">
+                <img src="assets/PROMPTMASK LOGO.png" alt="Ominous P-Shield Logo" class="main-logo-img">
+            </div>
+            
+            <p class="event-tag">A Solomon Kin Records LLC Event</p>
+            <h1 class="main-title">PROMPT<span>MASK</span></h1>
+            
+            <div class="slogan-box">
+                <p class="slogan">"Secure your vision, refine your flow."</p>
+            </div>
 
-    <section class="hero">
-        <img src="PROMPTMASK LOGO.png" alt="P-Shield" class="p-shield">
-        <h1>Vexilla <span>PromptMask</span></h1>
-        <p class="slogan">"Secure your vision, refine your flow."</p>
-        
-        <div class="cta-container">
-            <a href="#" class="btn">DOWNLOAD PC LAYER</a>
-            <a href="#" class="btn">GET ANDROID APK</a>
-        </div>
-    </section>
+            <p style="max-width: 750px; font-weight: 200; color: #888;">
+                The essential black-box logger for <strong>AI Directors</strong> and <strong>Character Architects</strong>. 
+                In the era of multimodal filmmaking, your process is your most valuable asset.
+            </p>
+            
+            <a href="#deploy" class="cta-btn">ACTIVATE SHIELD</a>
+        </section>
 
-    <section class="features" id="about">
-        <div class="feature-card">
-            <h3>Silent Capture</h3>
-            <p>Runs in the background of Gemini and Grok. Captures every prompt entry the moment you hit send.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Stealth Vault</h3>
-            <p>Your creative flow is stored locally with AES-256 encryption. Only you have the keys to your history.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Cross-Sync</h3>
-            <p>Bridge the gap between desktop creation and mobile refinement with the Vexilla AITS Cloud.</p>
-        </div>
-    </section>
+        <section class="directors-suite">
+            <p class="section-label">// ARCHITECTURAL CAPABILITIES</p>
+            <div class="grid">
+                <div class="feature-card">
+                    <h3>Character Blueprinting</h3>
+                    <p>Maintaining a character's "Soul" across Midjourney, Gemini, and Grok is the ultimate challenge. PromptMask logs the evolution of your Character Bible, ensuring every aesthetic trait and speech pattern remains consistent from scene to scene.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Prop & Asset Metadata</h3>
+                    <p>In AI Filmmaking, props are notoriously difficult to track. PromptMask allows you to bookmark specific prompt nodes for cinematic objects—allowing for perfect re-rendering of hero assets across disparate sessions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Director's Ghost Layer</h3>
+                    <p>PromptMask sits as a non-intrusive background ghost layer. It observes the creative dialogue between the Director and the Machine, capturing every iteration so you can refine the "perfect take" without manual notes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="the-need">
+            <div class="split">
+                <div class="side-content">
+                    <h2 class="highlight-text">THE DIRECTOR'S <span style="color:var(--vexilla-green)">BLACK BOX</span></h2>
+                    <p>At <strong>Solomon Kin Records LLC Media Group</strong> and <strong>Cast AI Stars</strong>, we realize that every prompt is a line of digital DNA. The biggest risk in modern AI production is <strong>Memory Volatility</strong>.</p>
+                    <p style="margin-top:20px;">Without PromptMask, your most complex cinematic environments are one browser-refresh away from extinction. We built this for the directors who understand that the "process" is the property.</p>
+                </div>
+                
+                <div class="side-content" style="background: var(--glass); padding: 50px; border-radius: 4px; border: 1px solid rgba(0, 255, 65, 0.1);">
+                    <h4 style="font-family: 'Orbitron', sans-serif; color: white; margin-bottom: 25px; letter-spacing: 2px;">VEXILLA ASSET REGISTRY</h4>
+                    <p style="font-size: 0.75rem; opacity: 0.5; letter-spacing: 1px;">CRITICAL DATA CAPTURE:</p>
+                    <ul class="prop-list">
+                        <li>HERO CHARACTER SEEDS</li>
+                        <li>CINEMATIC LIGHTING NODES</li>
+                        <li>ENVIRONMENTAL ANCHOR STRINGS</li>
+                        <li>SCRIPT CONTINUITY LOGS</li>
+                        <li>CAST AI TALENT PROFILES</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Vexilla AI Tech Solutions. All Rights Reserved.</p>
-        <p class="parent-brand">A Proprietary Utility of Solomon Kin LLC.</p>
+        <p>VEXILLA PROMPTMASK | BORN IN THE STUDIOS OF SOLOMON KIN LLC</p>
+        <p style="margin-top: 15px;">&copy; 2026 SKRS-AI MEDIA GROUP | ALL RIGHTS RESERVED</p>
     </footer>
 
 </body>
-
 </html>
-
