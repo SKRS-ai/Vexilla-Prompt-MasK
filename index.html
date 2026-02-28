@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vexilla PromptMask: Professional background-layer capture for AI creators, movie scripts, and character design.">
+    <title>Vexilla PromptMask | Secure Your Vision</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Inter:wght@300;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --onyx: #050505;
+            --vexilla-green: #00FF41;
+            --deep-shield: #0a0f0a;
+            --text-main: #e0e0e0;
+            --ghost-silver: #C0C0C0;
+            --glow: 0 0 25px rgba(0, 255, 65, 0.4);
+        }
+
+        /* Base Styles */
+        body {
+            background-color: var(--onyx);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0; line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-ai {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #111 0%, #050505 100%);
+            border-bottom: 1px solid #222;
+            text-align: center;
+            padding: 60px 10%;
+        }
+
+        /* Logo Deployment */
+        .logo-container {
+            margin-bottom: 30px;
+            animation: pulse 4s infinite ease-in-out;
+        }
+
+        .main-logo-img {
+            max-width: 220px;
+            height: auto;
+            filter: drop-shadow(var(--glow));
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(0, 255, 65, 0.2)); }
+            50% { transform: scale(1.02); filter: drop-shadow(var(--glow)); }
+        }
+
+        .branding-header {
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            letter-spacing: 5px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            opacity: 0.7;
+        }
+
+        .main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: white;
+            text-transform: uppercase;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .main-title span { color: var(--vexilla-green); }
+
+        .slogan-box {
+            border-left: 3px solid var(--vexilla-green);
+            padding-left: 20px;
+            margin: 40px auto;
+            max-width: fit-content;
+            text-align: left;
+        }
+
+        .slogan-text {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: var(--vexilla-green);
+            font-weight: 300;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+        /* Feature Grid */
+        .authority-section {
+            padding: 100px 10%;
+            background: var(--deep-shield);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px;
+            align-items: start;
+        }
+
+        .content-block h2 { font-family: 'Orbitron', sans-serif; color: white; margin-bottom: 20px; letter-spacing: 2px; }
+        .green-line { width: 60px; height: 4px; background: var(--vexilla-green); margin-bottom: 35px; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 30px; }
+        .comparison-table td { padding: 18px 0; border-bottom: 1px solid #1a1a1a; font-size: 0.95rem; }
+        .con { color: #ff4d4d; padding-right: 15px; vertical-align: top; }
+        .pro { color: var(--vexilla-green); font-weight: 600; vertical-align: top; }
+
+        /* Creative Card */
+        .creative-card {
+            background: linear-gradient(145deg, #0d120d, #050505);
+            padding: 45px;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 255, 65, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .creative-card h3 { font-family: 'Orbitron', sans-serif; color: white; margin-bottom: 20px; }
+
+        /* Action Buttons */
+        .cta-btn {
+            background: var(--vexilla-green);
+            color: black;
+            padding: 20px 50px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+            filter: brightness(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            font-size: 0.75rem;
+            color: #444;
+            background: #000;
+            letter-spacing: 2px;
+            border-top: 1px solid #111;
+        }
+
+        /* Error-Catching Mobile Fixes */
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero-ai { padding: 80px 5%; }
+            .slogan-box { margin: 30px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <section class="hero-ai">
+            <div class="logo-container">
+                <img src="assets/PROMPTMASK LOGO.png" alt="PromptMask P-Shield Logo" class="main-logo-img">
+            </div>
+
+            <div class="branding-header" aria-hidden="true">SKRS-AI MEDIA GROUP DEPLOYMENT</div>
+            <h1 class="main-title">PROMPT<span>MASK</span></h1>
+            
+            <div class="slogan-box">
+                <p class="slogan-text">"Secure your vision, refine your flow."</p>
+            </div>
+
+            <p style="max-width: 650px; margin-bottom: 20px; color: var(--ghost-silver); font-size: 1.1rem;">
+                The essential background-layer capture utility for high-stakes architects. 
+                Born from the cinematic requirements of 
+                <strong>Solomon Kin Records LLC</strong> and <strong>Cast AI Stars</strong>.
+            </p>
+            
+            <a href="#deploy" class="cta-btn">ACTIVATE SHIELD</a>
+        </section>
+
+        <section class="authority-section" id="about">
+            <div class="grid">
+                <div class="content-block">
+                    <h2>THE CREATOR'S DILEMMA</h2>
+                    <div class="green-line"></div>
+                    <p>In movie script development and deep-character design, <strong>Session Drift</strong> is the enemy. Standard AI models do not prioritize your prompt history. PromptMask ensures that the creative DNA of your production is captured silently in the background.</p>
+                    
+                    <table class="comparison-table">
+                        <tr><td class="con">Standard AI: Prompt data is volatile and easily lost.</td><td class="pro">PromptMask: Permanent background-layer logging.</td></tr>
+                        <tr><td class="con">Workflow interruption for manual saves.</td><td class="pro">Seamless "Shadow" capture technology.</td></tr>
+                        <tr><td class="con">Zero continuity across generation sessions.</td><td class="pro">Studio-grade AES-256 local vaulting.</td></tr>
+                    </table>
+                </div>
+                
+                <div class="creative-card">
+                    <h3>"By Architects, For Architects"</h3>
+                    <p>At <strong>Solomon Kin Records LLC Media Group</strong>, we believe the process is as valuable as the result. PromptMask follows your creative evolution, preserving every iteration of your script or character profile.</p>
+                    
+                    <p style="margin-top: 30px; font-weight: 600; color: white; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;">Production Optimizations:</p>
+                    <ul style="color: var(--vexilla-green); padding-left: 20px; font-size: 0.95rem; list-style-type: square;">
+                        <li>Script Continuity & Iteration Tracking</li>
+                        <li>Character Archetype Preservation</li>
+                        <li>VFX Prompt Engineering Documentation</li>
+                        <li>Cast AI Stars Talent Deep-Profiling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>VEXILLA PROMPTMASK &copy; 2026 | A SKRS-AI MEDIA GROUP UTILITY</p>
+        <p style="margin-top: 15px;">PROPRIETARY TECHNOLOGY OF SOLOMON KIN LLC | ALL RIGHTS RESERVED</p>
+    </footer>
+
+</body>
+</html>
