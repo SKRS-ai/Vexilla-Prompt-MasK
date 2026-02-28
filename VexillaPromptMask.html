@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vexilla PromptMask | Secure Your Vision</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --onyx: #0A0A0A;
+            --vexilla-green: #00FF41;
+            --ghost-silver: #C0C0C0;
+            --dark-gray: #1A1A1A;
+            --glow: 0 0 15px rgba(0, 255, 65, 0.5);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--onyx);
+            color: var(--ghost-silver);
+            font-family: 'Roboto Mono', monospace;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo { font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid var(--dark-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { color: white; font-size: 1.2rem; }
+        .logo span { color: var(--vexilla-green); }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
+        nav ul li a { color: var(--ghost-silver); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        nav ul li a:hover { color: var(--vexilla-green); text-shadow: var(--glow); }
+
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #111 0%, #0A0A0A 100%);
+            padding: 20px;
+        }
+
+        .p-shield {
+            width: 180px;
+            margin-bottom: 30px;
+            filter: drop-shadow(var(--glow));
+        }
+
+        .hero h1 { font-size: 3rem; color: white; margin-bottom: 10px; }
+        .hero h1 span { color: var(--vexilla-green); }
+        .slogan { font-size: 1.2rem; color: var(--vexilla-green); margin-bottom: 40px; font-style: italic; }
+
+        .cta-container { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+
+        .btn {
+            padding: 15px 35px;
+            border: 2px solid var(--vexilla-green);
+            background: transparent;
+            color: var(--vexilla-green);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: var(--vexilla-green);
+            color: var(--onyx);
+            box-shadow: var(--glow);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--dark-gray);
+            padding: 30px;
+            border-radius: 10px;
+            border-bottom: 4px solid var(--vexilla-green);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-card h3 { color: white; margin-bottom: 15px; }
+
+        /* Footer */
+        footer {
+            padding: 50px;
+            text-align: center;
+            border-top: 1px solid var(--dark-gray);
+            font-size: 0.8rem;
+        }
+
+        .parent-brand { margin-top: 20px; color: #444; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">VEXILLA <span>AITS</span></div>
+        <ul>
+            <li><a href="../index.html">VexillaAITS.com</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <img src="https://near-maya-brown-0074.github.io/vexilla-support/prompt-mask/assets/logo.png" alt="P-Shield" class="p-shield">
+        <h1>Vexilla <span>PromptMask</span></h1>
+        <p class="slogan">"Secure your vision, refine your flow."</p>
+        
+        <div class="cta-container">
+            <a href="#" class="btn">DOWNLOAD PC LAYER</a>
+            <a href="#" class="btn">GET ANDROID APK</a>
+        </div>
+    </section>
+
+    <section class="features" id="about">
+        <div class="feature-card">
+            <h3>Silent Capture</h3>
+            <p>Runs in the background of Gemini and Grok. Captures every prompt entry the moment you hit send.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Stealth Vault</h3>
+            <p>Your creative flow is stored locally with AES-256 encryption. Only you have the keys to your history.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Cross-Sync</h3>
+            <p>Bridge the gap between desktop creation and mobile refinement with the Vexilla AITS Cloud.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vexilla AI Tech Solutions. All Rights Reserved.</p>
+        <p class="parent-brand">A Proprietary Utility of Solomon Kin LLC.</p>
+    </footer>
+
+</body>
+</html>
